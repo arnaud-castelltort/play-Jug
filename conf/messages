@@ -1,0 +1,34 @@
+# Misc
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+label.moreInformation = Plus d'information
+label.seeAll = Lire la suite
+
+
+# Navigation and Title
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+navigation.home = Accueil
+navigation.about = A propos
+navigation.event = Événements
+
+title.jug = MONTPELLIER JUG
+title.about = A propos du Montpellier JUG
+title.event = Événement Montpellier JUG : %s
+
+
+# Main
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+header.sponsors
+header.about
+
+# Event
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+event.header.speakers =
+event.header.lastEvents =
+event.header.pastEvents =
+event.header.upcomingEvents =
+event.header.talks = 
+event.header.report =

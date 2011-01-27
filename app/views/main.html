@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>#{get 'title' /}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+		<link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+
+		#{get 'moreScripts' /}
+		#{get 'moreStyles' /}
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<a id="logo" href="@{Application.index}">
+				<span>Montpellier Jug</span></a>
+			<nav id="menu">
+				<ul>
+					<li ${request.actionMethod == 'index' ? 'class=active' : ''}><a href="@{Application.index()}">Home</a></li>
+					<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>
+<!--					<li><a href="#">Publications</a></li>-->
+					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">About us</a></li>
+				</ul>
+			</nav>
+			#{doLayout /}
+			<section id="partners">
+				<h2>Partners</h2>
+				<div class="partners-register">
+					<h3>Devenir sponsor?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.</p>
+				</div>
+				<ul class="partners-list">
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+				</ul>
+			</section>
+		</div>
+		<footer>
+			<h2>Montpellier JUG, partages et discussions sur Java en Languedoc-Roussillon.</h2>
+			<div>
+				<h3>About us</h3>
+				<p>Nous sommes une association loi 1901, créée pour partager nos expériences des TIC, et promouvoir les technologies autour de Java en Languedoc-Roussillon.</p>
+				<p>L'objectif premier est de réunir les acteurs montpellierains (sociétés, écoles, étudiants), à travers notamment l'organisation de soirées thématiques, gratuites et ouvertes à tous.</p>
+				<p>Une autre finalité est la mise en relation de ces acteurs, par d'autres moyens que les forums et groupes virtuels.</p>
+				<p><a id="contact" href="@{Application.about()}">En savoir plus...</a></p>
+			</div>
+			<div>
+				<h3>Get involved</h3>
+				<p>Chaque participant est encouragé à promovoir les évènements via des gazoullis, courriels ou tout autre moyen de communication.</p>
+				<p>Les thématiques sont ouvertes à proposition, si vous souhaitez que le JUG intervienne sur un sujet en particulier, faites-le nous savoir en envoyant un courriel.</p>
+				<p>Enfin, si vous avez une expérience sur un sujet spécifique, et que vous souhaitez la partager, nous sommes en perpétuelle recherche de nouveaux speakers.</p>
+				<p><a id="contact" href="mailto:montpellier-jug@gmail.com">montpellier-jug@gmail.com</a></p>
+			</div>
+			<div>
+				<p><a id="contact" href="#w">Github</a></p>
+				<p><a id="contact" href="#w">Twitter</a></p>
+			</div>
+			<hr/>
+			<p class="credits">Contenus sous licence <a href="http://creativecommons.org/licenses/by/3.0/">CreativeCommons</a> — <a id="contact" href="#w">Crédits</a></p>
+		</footer>
+	</body>
+</html>

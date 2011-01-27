@@ -1,0 +1,30 @@
+<header>
+	<div id="speakers">
+		<h2>Speakers</h2>
+		#{list event.speakers(), as : "speaker"}
+			<dl>
+				<dt>${speaker.fullName}</dt>
+				<dd>${speaker.activity}</dd>
+				<dd>${speaker.company}</dd>
+				<dd><a href="${speaker.url}" target="blank">${speaker.url}</a></dd>
+			</dl>
+		#{/list}
+	</div>
+	<div id="presentation">
+		<h1><a href="#details">${event.title}</a></h1>
+		<p>
+			${event.description} 
+			<a href="@{Application.event(event.id)}">Plus d'informations</a>
+		</p>
+		<ul id="details">
+			<li class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')}</li>
+			<li class="place">${event.location}</li>
+			#{if event.registrationCloded()}
+				<li class="register closed"><a href="${event.registrationURL}">Inscription</a><li>
+			#{/if}
+			#{else}
+				<li class="register"><a>Inscription</a><li>
+			#{/else}
+		</ul>
+	</div>
+</header>
