@@ -21,7 +21,7 @@
 	</nav>
 	<article>
 		<h2>Sessions</h2>
-		#{list event.talks, as : "talk"}
+		#{list event.talks(), as : "talk"}
 			<h3>${talk.title}</h3>
 			<p>${talk.teaser}</p>
 		#{/list}

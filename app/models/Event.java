@@ -1,6 +1,8 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +16,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Event extends Model {
-	
+
 	public String title;
 
 	public Date date;
@@ -30,10 +32,10 @@ public class Event extends Model {
 	public String registrationURL;
 
 	public int capacity;
-	
+
 	public boolean open;
-	
-	@OneToMany(mappedBy="event", cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
 	public List<Talk> talks;
 
 	public static Event next() {
@@ -54,6 +56,15 @@ public class Event extends Model {
 
 	public boolean registrationCloded() {
 		return !open || date.compareTo(new Date()) < 0;
+	}
+
+	public List<Talk> talks() {
+		Collections.sort(talks, new Comparator<Talk>() {
+			public int compare(Talk talk1, Talk talk2) {
+				return talk1.orderInEvent - talk2.orderInEvent;
+			};
+		});
+		return  talks;
 	}
 
 	public List<Speaker> speakers() {

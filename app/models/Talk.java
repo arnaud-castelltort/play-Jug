@@ -9,6 +9,8 @@ import play.db.jpa.Model;
 @Entity
 public class Talk extends Model {
 
+	public int orderInEvent;
+	
 	public String title;
 
 	@MaxSize(5)
