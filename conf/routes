@@ -6,6 +6,9 @@
 GET     /                                       Application.index
 GET     /event                                  Application.event
 GET     /about                                  Application.about
+GET     /inscription/{id}                       Inscription.show
+GET     /validcode/{code}                       Inscription.validCode
+GET     /captcha                                Inscription.captcha
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

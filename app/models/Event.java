@@ -15,6 +15,9 @@ import play.db.jpa.Model;
 @Entity
 public class Event extends Model {
 
+
+	public String nouguier;
+	
 	public String title;
 
 	public Date date;
@@ -29,6 +32,9 @@ public class Event extends Model {
 
 	public String registrationURL;
 
+	public int capacity;
+	
+	
 	@OneToMany(mappedBy="event", cascade=CascadeType.ALL)
 	public List<Talk> talks;
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>#{get 'title' /}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+		<link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+
+		#{get 'moreScripts' /}
+		#{get 'moreStyles' /}
+
+	</head>
+		<body>
+		<div id="wrapper">
+			<a id="logo" href="@{Application.index}">
+				<span>Montpellier Jug</span></a>
+			<header>
+				<div id="speakers">
+					<h2>Speakers</h2>
+					#{list event.speakers(), as : "speaker"}
+						<dl>
+							<dt>${speaker.fullName}</dt>
+							<dd>${speaker.activity}</dd>
+							<dd>${speaker.company}</dd>
+							<dd><a href="${speaker.url}" target="blank">${speaker.url}</a></dd>
+						</dl>
+					#{/list}
+				</div>
+				<div id="presentation">
+					<h1><a href="#details">${event.title}</a></h1>
+					<p>
+						${event.description} 
+						<a href="@{Application.event(event.id)}">Plus d'informations</a>
+					</p>
+					<ul id="details">
+						<li class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')}</li>
+						<li class="place">${event.location}</li>
+						#{if event.registrationCloded()}
+							<li class="register closed"><a href="${event.registrationURL}">Inscription</a><li>
+						#{/if}
+						#{else}
+			<!--	TODO : check if event.registrationUrl is null; then make default inscription system
+						<li class="register"><a href="${event.registrationURL}">Inscription</a><li>-->
+							<li class="register"><a href="/inscription/${event.id}">Inscription</a><li>
+						#{/else}
+					</ul>
+				</div>
+			</header>
+			<section id="main">
+			<nav>
+				<h2>Upcoming events</h2>
+				<ul>
+					#{list event.upComings(), as : "evt"}
+					<li>
+						<a href="@{Application.event(evt.id)}">${evt.title}</a>
+						<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+					</li>
+					#{/list}
+				</ul>
+				<h2>Past events</h2>
+				<ul>
+					#{list event.pasts(), as : "evt"}
+					<li>
+						<a href="@{Application.event(evt.id)}">${evt.title}</a>
+						<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+					</li>
+					#{/list}
+				</ul>
+			</nav>
+			<article>
+				<h2>Valider votre préInscription</h2>
+				Merci de bien vouloir cliquer sur ce <a href="${host}@{Inscription.validCode(code)}">lien</a>.
+				
+				<h2>Sessions</h2>
+				#{list event.talks, as : "talk"}
+					<h3>${talk.title}</h3>
+					<p>${talk.teaser}</p>
+				#{/list}
+			</article>
+		</section>
+			<section id="partners">
+				<h2>Partners</h2>
+				<div class="partners-register">
+					<h3>Devenir sponsor?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.</p>
+				</div>
+				<ul class="partners-list">
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+					<li><a href="http://www.zenexity.fr"><img src="http://www.playapps.net/public/images/zenexity.png"/></a></li>
+				</ul>
+			</section>
+		</div>

@@ -1,7 +1,7 @@
 # you describe your data using the YAML notation here
-# and then load them using Fixtures.load("data.yml")
+# and then load them using Fixtures.load("initial-data.yml")
 
- Event(0):
+ Event(e0):
    title: Event Zero
    description: Event Zero default description
    date: 2011-01-01
@@ -11,28 +11,29 @@
    description: Event One default description
    date: 2011-03-01
    
+ Event(e2):
+   title: Event Two
+   description: Event One default description
+   date: 3000-01-01
+   
  User(u1):
-   email: arnaud.Castelltort@gmail.com
+   email: user1@gmail.com
    
  User(u2):
-   email: arnaud.Castelltort@gmail.com
+   email: user2@gmail.com
    
  User(u3):
-   email: arnaud.Castelltort@gmail.com
+   email: user3@gmail.com
    
- Participation(1):
+ Participation(p1):
    event: e1
    user: u1
    
- Participation(2):
+ Participation(p2):
    event: e1
    user: u2
    
- Participation(3):
+ Participation(p3):
    event: e1
    user: u3
    
-# User(bob):
-#   email: bob@gmail.com
-#   password: secret
-#   fullname: Bob

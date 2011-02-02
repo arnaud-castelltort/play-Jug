@@ -23,7 +23,8 @@
 				<li class="register closed"><a href="${event.registrationURL}">Inscription</a><li>
 			#{/if}
 			#{else}
-				<li class="register"><a>Inscription</a><li>
+<!--				<li class="register"><a href="${event.registrationURL}">Inscription</a><li>-->
+				<li class="register"><a href="/inscription/${event.id}">Inscription</a><li>
 			#{/else}
 		</ul>
 	</div>
