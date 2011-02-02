@@ -5,11 +5,13 @@
    title: Event Zero
    description: Event Zero default description
    date: 2011-01-01
+   capacity: 40
    
  Event(e1):
    title: Event One
    description: Event One default description
    date: 2011-03-01
+   capacity: 40
    
  User(u1):
    email: arnaud.Castelltort@gmail.com

@@ -63,7 +63,7 @@
 	<h2>${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</h2>
 	<p class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</p>
 	#{if request.actionMethod == 'validCode'}
-		<span class="message">Vous êtes pré-inscris</span>
+		<span class="message">Votre demande de pré-inscription a été prise en compte</span>
 	#{/if}
 	#{elseif flash.success}
 		<p class="message">${flash.success}</p>
