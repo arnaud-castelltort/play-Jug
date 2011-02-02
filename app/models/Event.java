@@ -14,9 +14,6 @@ import play.db.jpa.Model;
 
 @Entity
 public class Event extends Model {
-
-
-	public String nouguier;
 	
 	public String title;
 
@@ -34,6 +31,7 @@ public class Event extends Model {
 
 	public int capacity;
 	
+	public boolean open;
 	
 	@OneToMany(mappedBy="event", cascade=CascadeType.ALL)
 	public List<Talk> talks;
@@ -55,7 +53,7 @@ public class Event extends Model {
 	}
 
 	public boolean registrationCloded() {
-		return date.compareTo(new Date()) < 0;
+		return !open || date.compareTo(new Date()) < 0;
 	}
 
 	public List<Speaker> speakers() {
