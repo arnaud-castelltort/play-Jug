@@ -2,6 +2,9 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+#Import Secure
+*      /                  module:secure
+
 # Home page
 GET     /                                       Application.index
 GET     /event                                  Application.event
@@ -17,5 +20,6 @@ GET     /public/                                staticDir:public
 *       /{controller}/{action}                  {controller}.{action}
 
 # Import CRUD routes
-*      /crud              module:crud
+*      /admin              module:crud
+
 
