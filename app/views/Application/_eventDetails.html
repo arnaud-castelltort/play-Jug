@@ -1,3 +1,10 @@
+<style>
+#main article .speaker
+{
+	color : #4A738C;
+	font-weight: bold;
+}
+</style>
 <section id="main">
 	<nav>
 		<h2>Upcoming events</h2>
@@ -20,13 +27,24 @@
 		</ul>
 	</nav>
 	<article>
-		<h2>Sessions</h2>
+		#{if event.report != null && !event.report.equals("")}
+			<h2>Compte rendu de la soirée</h2>
+			${event.report}
+		#{/if}
+		<h2>Programme</h2>
 		#{list event.talks(), as : "talk"}
-			<h3>${talk.title}</h3>
+			<h3>${talk.time} : ${talk.title}</h3>
+			</p>présenté par <span class="speaker">${talk.speaker.fullName}</span></p>
 			<p>${talk.teaser}</p>
 		#{/list}
-		<h2>Compte rendu de la soirée</h2>
-		${event.report}
+
+		<h2>Lieu</h2>
+		<p>${event.location}</p>
+		#{if event.map != null && !event.map.equals("")}
+			${event.map.raw()}
+		#{/if}
+		<h2>After</h2>
+		<p>A la fin de la soirée, une troisième mi-temps sera proposée dans un bar pour continuer à échanger et sympathiser </p>
 	</article>
 </section>
 

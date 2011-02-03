@@ -34,6 +34,8 @@ public class Event extends Model {
 	public int capacity;
 
 	public boolean open;
+	
+	public String map;
 
 	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
 	public List<Talk> talks;
