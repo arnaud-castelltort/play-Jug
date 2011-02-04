@@ -11,21 +11,28 @@
 		#{/list}
 	</div>
 	<div id="presentation">
-		<h1><a href="#details">${event.title}</a></h1>
+		<h1><a href="@{Application.event(event.id)}">${event.title}</a></h1>
 		<p>
 			${event.description} 
 			<a href="@{Application.event(event.id)}">Plus d'informations</a>
 		</p>
-		<ul id="details">
-			<li class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')}</li>
-			<li class="place">${event.location}</li>
-			#{if event.registrationCloded()}
-				<li class="register closed"><a href="${event.registrationURL}">Inscription</a><li>
-			#{/if}
-			#{else}
-<!--				<li class="register"><a href="${event.registrationURL}">Inscription</a><li>-->
-				<li class="register"><a href="/inscription/${event.id}">Inscription</a><li>
-			#{/else}
-		</ul>
+		#{if request.controller == 'Inscription'}
+			#{include 'Inscription/_inscription.html' /}
+		#{/if}
+		#{else}
+			<ul id="details">
+				<li class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</li>
+				<li class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</li>
+				#{if event.registrationCloded()}
+					<li class="register closed"><a>Inscription</a><li>
+				#{/if}
+				#{elseif event.registrationURL != null && !event.registrationURL.equals('') }
+					<li class="register"><a href="${event.registrationURL}">Inscription</a><li>
+				#{/elseif}
+				#{else}
+					<li class="register"><a href="/inscription/${event.id}">Inscription</a><li>
+				#{/else}
+			</ul>
+		#{/else}	
 	</div>
 </header>

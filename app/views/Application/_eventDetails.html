@@ -1,0 +1,32 @@
+<section id="main">
+	<nav>
+		<h2>Upcoming events</h2>
+		<ul>
+			#{list event.upComings(), as : "evt"}
+			<li>
+				<a href="@{Application.event(evt.id)}">${evt.title}</a>
+				<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+			</li>
+			#{/list}
+		</ul>
+		<h2>Past events</h2>
+		<ul>
+			#{list event.pasts(), as : "evt"}
+			<li>
+				<a href="@{Application.event(evt.id)}">${evt.title}</a>
+				<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+			</li>
+			#{/list}
+		</ul>
+	</nav>
+	<article>
+		<h2>Sessions</h2>
+		#{list event.talks, as : "talk"}
+			<h3>${talk.title}</h3>
+			<p>${talk.teaser}</p>
+		#{/list}
+		<h2>Compte rendu de la soirée</h2>
+		${event.report}
+	</article>
+</section>
+

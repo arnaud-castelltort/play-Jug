@@ -1,0 +1,98 @@
+<style>
+#registration {
+	width: 580px;
+	margin: 10px 0 0; padding: 5px 10px;
+	background: #9a2101;
+	border: 1px solid #7b1a01;
+	border-color: #7b1a01 #b23a1b #b23a1b #7b1a01;
+	color: #e8613e;
+}
+
+#registration h2 {
+	color: #ffba88;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+}
+#registration p { margin: 5px 0; }
+
+#registration form { margin-top: 15px; }
+#registration form p { margin-bottom: 10px; }
+#registration label { width: 25%; float: left; margin-right: 1%; text-align: right; color: #fff; }
+#registration .help { display: block; margin-left: 26%; color: #ffba88; }
+
+#registration input[type=text] {
+	padding: 2px; color: #444;
+	border-width: 1px;
+	border-color: #7b1a01 #b23a1b #b23a1b #7b1a01;
+}
+
+#registration input[type=submit] {
+	padding: 5px 10px;
+	font-size: 18px;
+	border: 0;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+	text-decoration: none;
+	background: #8fb704;
+	color: #fff;
+}
+#registration input[type=submit]:hover {
+	cursor: pointer; background: #9ac505;
+}
+
+#registration .message {
+ 	display: block;
+	font-size: 30px;
+	color: #fff;
+}
+
+#registration .success {
+ 	display: block;
+	color: #fff;
+}
+
+#registration .error {
+	font-size: 16px;
+ 	color: #fff;
+}
+
+</style>
+					
+<div id="registration">
+	<h2>${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</h2>
+	<p class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</p>
+	#{if request.actionMethod == 'validCode'}
+		<span class="message">Vous êtes pré-inscris</span>
+	#{/if}
+	#{elseif flash.success}
+		<p class="message">${flash.success}</p>
+	#{/elseif}
+	#{else}
+		<h2>Inscrivez-vous</h2>
+		#{form @Inscription.postSubscription(event.id)}
+		<p>
+			<label class="required" for="registrationEmail">Courriel</label>
+			<input type="text" size="20" value="" name="subscribeEmail" id="registrationEmail">
+			<span class="error">${errors.forKey('subscribeEmail')}</span> 
+			<span class="help">
+				Veuillez saisir une adresse email valide. Un emai de confirmation
+				vous serra envoyé avec toutes les informations nécessaires
+			</span>
+		</p>
+		<p>
+			<label class="required">Êtes-vous humain ?</label>
+			<input id="subscribe_captcha" type="text" size="20" value="" name="subscribeCaptcha">
+			<input name="randomId" type="hidden" value="${randomId}">
+			<span class="error">${errors.forKey('subscribeCaptcha')}</span>
+			<span class="help">
+				<img src="@{Inscription.captcha(randomId)}"/>
+			</span>
+		</p>
+		<p>
+			<label>&nbsp;</label>
+			<input type="submit" value="Se pré-inscrire" class="submit" />
+		</p>
+		#{/form}
+	#{/else}
+</div>

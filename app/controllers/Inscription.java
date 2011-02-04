@@ -97,7 +97,8 @@ public class Inscription extends Controller{
 			participation.status = participation.status.next();
 			participation.code = UUID.randomUUID().toString();
 			participation.save();
-			show(participation.event.id);
+			Event event = participation.event;
+			render("Inscription/show.html", event);
 		}else
 		{
 			//TODO
