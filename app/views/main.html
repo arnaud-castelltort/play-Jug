@@ -16,7 +16,7 @@
 			<nav id="menu">
 				<ul>
 					<li ${request.actionMethod == 'index' ? 'class=active' : ''}><a href="@{Application.index()}">Home</a></li>
-					<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>
+					#{if nextEventId}<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>#{/if}
 <!--					<li><a href="#">Publications</a></li>-->
 					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">About us</a></li>
 				</ul>

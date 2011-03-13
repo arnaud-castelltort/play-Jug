@@ -8,6 +8,9 @@ public class Application extends Controller {
 
 	public static void index() {
 		Event event = Event.next();
+		if (event == null) {
+			event = Event.last();
+		}
 		render(event);
 	}
 
@@ -17,9 +20,12 @@ public class Application extends Controller {
 	}
 
 	public static void about() {
-		Event event = Event.findById(renderArgs.get("nextEventId"));
-		render(event);
-		render();
+		if (renderArgs.get("nextEventId") != null) {
+			Event event = Event.findById(renderArgs.get("nextEventId"));
+			render(event);
+		} else {
+			render();
+		}
 	}
 
 	public static void view() {

@@ -1,7 +1,9 @@
 #{extends 'main.html' /}
 #{set title:'About' /}
 
-#{include 'Application/_eventHeader.html' /}
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
 <section id="main">
 	<nav>
 		<h2>About us</h2>

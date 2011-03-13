@@ -9,7 +9,13 @@ public class Filters extends Controller {
 	@Before
 	static void menu()
 	{
-			renderArgs.put("nextEventId", Event.next().id);
+		Event event = Event.next();
+		if (event == null) {
+			event = Event.last();
+		}
+		if (event != null) {
+			renderArgs.put("nextEventId", event.id);
+		}
 	}
 
 }

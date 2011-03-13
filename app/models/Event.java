@@ -55,6 +55,10 @@ public class Event extends Model {
 	public static List<Event> lasts() {
 		return Event.find("date < ? order by date desc", new Date()).fetch(3);
 	}
+	
+	public static Event last() {
+		return Event.find("date < ? order by date desc", new Date()).first();
+	}
 
 	public boolean registrationCloded() {
 		return !open || date.compareTo(new Date()) < 0;
