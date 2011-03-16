@@ -19,6 +19,7 @@
 					#{if nextEventId}<li ${request.actionMethod == 'event' ? 'class=active' : ''}><a href="@{Application.event(nextEventId)}">Events</a></li>#{/if}
 <!--					<li><a href="#">Publications</a></li>-->
 					<li ${request.actionMethod == 'about' ? 'class=active' : ''}><a href="@{Application.about()}">About us</a></li>
+					<li ${request.actionMethod == 'members' ? 'class=active' : ''}><a href="@{Application.members()}">&{'navigation.members'}</a></li>
 				</ul>
 			</nav>
 			#{doLayout /}

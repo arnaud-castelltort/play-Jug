@@ -1,7 +1,11 @@
 package controllers;
 
+import java.util.List;
+
 import models.Event;
-import play.mvc.*;
+import models.Speaker;
+import play.mvc.Controller;
+import play.mvc.With;
 
 @With(Filters.class)
 public class Application extends Controller {
@@ -30,6 +34,16 @@ public class Application extends Controller {
 
 	public static void view() {
 		render();
+	}
+	
+	public static void members() {
+		List<Speaker> members = Speaker.findAll();
+		if (renderArgs.get("nextEventId") != null) {
+			Event event = Event.findById(renderArgs.get("nextEventId"));
+			render(members, event);
+		} else {
+			render(members);
+		}
 	}
 
 }

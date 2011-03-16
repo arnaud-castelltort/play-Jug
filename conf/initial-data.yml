@@ -15,7 +15,7 @@
  Event(e2):
    title: Event Two
    description: Event One default description
-   date: 3000-01-01
+   date: 2000-01-01
    
  User(u1):
    email: user1@gmail.com
@@ -41,9 +41,21 @@
  Speaker(speak1):
    fullName: Arnaud Castelltort
    activity: Consultant & Architecte Logiciel
-   compagny: Zenexity
+   company: Zenexity
    url: http://www.zenexity.com
-   
+
+ Speaker(speak2):
+   fullName: Blip
+   activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
+   company: Toto
+   url: nop
+ 
+ Speaker(speak3):
+   fullName: Blop
+   activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
+   company: Titi
+   url: nop
+    
  Talk(talk1):
    title: Introduction
    time: "19:00"

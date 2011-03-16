@@ -11,6 +11,7 @@ label.seeAll = Lire la suite
 navigation.home = Accueil
 navigation.about = A propos
 navigation.event = Événements
+navigation.members = Membres
 
 title.jug = MONTPELLIER JUG
 title.about = A propos du Montpellier JUG
@@ -32,3 +33,7 @@ event.header.pastEvents =
 event.header.upcomingEvents =
 event.header.talks = 
 event.header.report =
+
+# Members
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+members.title=Les membres

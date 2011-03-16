@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Membres' /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+<section id="members">
+	<h2>&{'members.title'}</h2>
+	#{list members, as : "member"}
+		<article>
+			<h3>${member.fullName}</h3>
+			<span>${member.company}</span><br />
+			${member.activity}
+		</article>
+	#{/list} 
+</section>

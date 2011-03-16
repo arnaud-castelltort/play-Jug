@@ -496,3 +496,20 @@ footer a:hover {
 footer .credits {
 	text-align: center;
 }
+
+#members article {
+	width: 600px;
+	float: right;
+	padding: 15px;
+	border-right: 1px solid #375568;
+	color: white;
+	background: #395261;
+	-webkit-box-shadow: 5px 5px 0 rgba(0,0,0,.3);
+	-moz-box-shadow: 5px 5px 0 rgba(0,0,0,.3);
+	box-shadow: 5px 5px 0 rgba(0,0,0,.3);
+	margin: 10px;
+}
+
+#members article span {
+	color: #8fb704;
+}
