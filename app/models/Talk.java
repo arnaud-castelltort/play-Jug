@@ -9,21 +9,26 @@ import play.db.jpa.Model;
 @Entity
 public class Talk extends Model {
 
-	public int orderInEvent;
-	
-	public String title;
+    public int orderInEvent;
 
-	@MaxSize(5)
-	public String time;
+    public String title;
 
-	@ManyToOne
-	public Speaker speaker;
+    @MaxSize(5)
+    public String time;
 
-	public String tags;
+    @ManyToOne
+    public Speaker speaker;
 
-	@MaxSize(1000)
-	public String teaser;
+    public String tags;
 
-	@ManyToOne
-	public Event event;
+    @MaxSize(1000)
+    public String teaser;
+
+    @ManyToOne
+    public Event event;
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }
