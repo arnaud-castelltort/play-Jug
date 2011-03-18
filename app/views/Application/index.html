@@ -8,7 +8,7 @@
 		#{list event.lasts(), as : "event"}
 			<article>
 				<h3>${event.title}</h3>
-				<p class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')}</p>
+				<p class="date">${event.date.format('dd MMMM yyyy', 'fr')}</p>
 				<p>${event.description}</p>
 				<a class="more" href="@{Application.event(event.id)}">Lire la suite</a>
 			</article>

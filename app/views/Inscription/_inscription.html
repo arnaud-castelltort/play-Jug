@@ -60,7 +60,7 @@
 </style>
 
 <div id="registration">
-	<h2>${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</h2>
+	<h2>${event.date.format('dd MMMM yyyy', 'fr')} (${event.capacity} places)</h2>
 	<p class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</p>
 	#{ifErrors}
 		#{errors}
