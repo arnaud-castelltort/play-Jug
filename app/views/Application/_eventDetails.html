@@ -12,7 +12,7 @@
 			#{list event.upComings(), as : "evt"}
 			<li>
 				<a href="@{Application.event(evt.id)}">${evt.title}</a>
-				<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+				<span class="date">${evt.date.format('dd MMMM yyyy', 'fr')}</span>
 			</li>
 			#{/list}
 		</ul>
@@ -21,7 +21,7 @@
 			#{list event.pasts(), as : "evt"}
 			<li>
 				<a href="@{Application.event(evt.id)}">${evt.title}</a>
-				<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+				<span class="date">${evt.date.format('dd MMMM yyyy', 'fr')}</span>
 			</li>
 			#{/list}
 		</ul>
