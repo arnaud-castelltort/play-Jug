@@ -405,6 +405,12 @@ article h3 {
 	margin: 20px 0 10px;
 }
 
+#main article h4 {
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0 10px;
+}
+
 /*  -------------------------------- PARTNERS */
 #partners {
 	position: relative;
