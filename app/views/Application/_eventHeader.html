@@ -13,7 +13,7 @@
 	<div id="presentation">
 		<h1><a href="@{Application.event(event.id)}">${event.title}</a></h1>
 		<p>
-			${event.description} 
+			${event.description}
 			<a href="@{Application.event(event.id)}">Plus d'informations</a>
 		</p>
 		#{if request.controller == 'Inscription'}
@@ -24,7 +24,7 @@
 				<li class="date">${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</li>
 				<li class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</li>
 				#{if event.registrationCloded()}
-					<li class="register closed"><a>Inscription</a><li>
+					<li class="register closed"><li>
 				#{/if}
 				#{elseif event.registrationURL != null && !event.registrationURL.equals('') }
 					<li class="register"><a href="${event.registrationURL}">Inscription</a><li>
@@ -33,6 +33,6 @@
 					<li class="register"><a href="/inscription/${event.id}">Inscription</a><li>
 				#{/else}
 			</ul>
-		#{/else}	
+		#{/else}
 	</div>
 </header>

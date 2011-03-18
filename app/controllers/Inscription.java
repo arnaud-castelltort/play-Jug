@@ -1,20 +1,17 @@
 package controllers;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import models.Event;
+import models.Participation;
+import models.User;
 import notifiers.Mails;
 
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
-import com.sun.xml.internal.ws.api.pipe.Codec;
-
-import models.Event;
-import models.Participation;
-import models.User;
-
+import play.Play;
 import play.cache.Cache;
 import play.data.validation.Required;
 import play.libs.Images;
@@ -117,7 +114,7 @@ public class Inscription extends Controller{
 	private static void sendMail(String toEmail, String subject, String message) throws EmailException
 	{
 		SimpleEmail email = new SimpleEmail();
-		email.setFrom("info@jug-montpellier.org");
+		email.setFrom(Play.configuration.getProperty("mail.smtp.user"));
 		email.addTo(toEmail);
 		email.setSubject(subject);
 		email.setMsg(message);

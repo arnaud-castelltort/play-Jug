@@ -12,7 +12,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -44,7 +44,7 @@ q:before, q:after {
 	content: none;
 }
 
-/* remember to define visible focus styles! 
+/* remember to define visible focus styles!
 :focus {
 	outline: ?????;
 } */
@@ -498,7 +498,7 @@ footer .credits {
 }
 
 #members article {
-	width: 600px;
+	width: 700px;
 	float: right;
 	padding: 15px;
 	border-right: 1px solid #375568;
@@ -512,4 +512,10 @@ footer .credits {
 
 #members article span {
 	color: #8fb704;
+}
+
+.member-photo {
+	width: 100px;
+	float: left;
+	padding-right: 20px;
 }

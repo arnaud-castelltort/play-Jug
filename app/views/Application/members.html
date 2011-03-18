@@ -8,9 +8,18 @@
 	<h2>&{'members.title'}</h2>
 	#{list members, as : "member"}
 		<article>
+			<div class="member-photo">
+			#{if (member.photoUrl)}
+				<img alt="${member.fullName}" src="${member.photoUrl}">
+			#{/if}#{else}
+				<img alt="${member.fullName}" src="@{'/public/images/logo.png'}">
+			#{/else}
+			</div>
+			<div>
 			<h3>${member.fullName}</h3>
 			<span>${member.company}</span><br />
 			${member.activity}
+			</div>
 		</article>
-	#{/list} 
+	#{/list}
 </section>

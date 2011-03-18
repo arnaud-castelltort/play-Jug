@@ -58,10 +58,15 @@
 }
 
 </style>
-					
+
 <div id="registration">
 	<h2>${event.date.format('dd MMMM yyyy hh:mm', 'fr')} (${event.capacity} places)</h2>
 	<p class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</p>
+	#{ifErrors}
+		#{errors}
+	   		<span class="error">${error}</span>
+		#{/errors}
+	#{/ifErrors}
 	#{if request.actionMethod == 'validCode'}
 		<span class="message">Votre demande de pré-inscription a été prise en compte</span>
 	#{/if}
@@ -74,7 +79,7 @@
 		<p>
 			<label class="required" for="registrationEmail">Courriel</label>
 			<input type="text" size="20" value="" name="subscribeEmail" id="registrationEmail">
-			<span class="error">${errors.forKey('subscribeEmail')}</span> 
+			<span class="error">${errors.forKey('subscribeEmail')}</span>
 			<span class="help">
 				Veuillez saisir une adresse email valide. Un emai de confirmation
 				vous serra envoyé avec toutes les informations nécessaires
