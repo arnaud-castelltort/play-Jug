@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:event.title /}
+
+#{if event}
+	#{include 'Application/_eventHeader.html' /}
+#{/if}
+<section id="main">
+	<nav>
+		#{if (memberEvent.size() > 0)}<h2>&{'member.event'}</h2>#{/if}
+		<ul>
+			#{list memberEvent, as : "evt"}
+			<li>
+				<a href="@{Application.event(evt.id)}">${evt.title}</a>
+				<span class="date">${evt.date.format('dd MMMM yyyy hh:mm', 'fr')}</span>
+			</li>
+			#{/list}
+		</ul>
+	</nav>
+	<article id="member">
+			<div class="member-photo">
+			#{if (member.photoUrl)}
+				<img alt="${member.fullName}" src="${member.photoUrl}">
+			#{/if}#{else}
+				<img alt="${member.fullName}" src="@{'/public/images/logo.png'}">
+			#{/else}
+			</div>
+			<div>
+			<h3>${member.fullName}#{if (member.memberFct)} &nbsp; <span class="member-fonction">(${member.memberFct})</span>#{/if}</h3>
+			<span>${member.company}</span><br />
+			${member.activity}<br /> 
+			${member.description}
+			</div>
+		</article>
+</section>
+

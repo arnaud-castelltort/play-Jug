@@ -510,12 +510,36 @@ footer .credits {
 	margin: 10px;
 }
 
+#member{
+	padding-top: 50px !important;
+}
+
+#member span {
+	color: #8fb704;
+}
+
 #members article span {
 	color: #8fb704;
 }
 
+#members a {
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 2px 2px 0 rgba(0,0,0,.3);
+	text-decoration: none;
+}
+
+#members a:hover {
+	color: #aaa;
+}
+		
 .member-photo {
 	width: 100px;
 	float: left;
 	padding-right: 20px;
 }
+
+.member-fonction {
+	font-style: italic;
+}
+

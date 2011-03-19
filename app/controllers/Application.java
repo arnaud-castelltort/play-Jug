@@ -4,7 +4,6 @@ import java.util.List;
 
 import models.Event;
 import models.Speaker;
-import models.Member;
 import play.mvc.Controller;
 import play.mvc.With;
 
@@ -38,12 +37,23 @@ public class Application extends Controller {
 	}
 
 	public static void members() {
-		List<Member> members = Member.findAll();
+		List<Speaker> members = Speaker.getMembers();
 		if (renderArgs.get("nextEventId") != null) {
 			Event event = Event.findById(renderArgs.get("nextEventId"));
 			render(members, event);
 		} else {
 			render(members);
+		}
+	}
+	
+	public static void member(Long id) {
+		Speaker member = Speaker.findById(id);
+		List<Event> memberEvent = Speaker.getSpeakerEvents(id);
+		if (renderArgs.get("nextEventId") != null) {
+			Event event = Event.findById(renderArgs.get("nextEventId"));
+			render(member, memberEvent, event);
+		} else {
+			render(member, memberEvent);
 		}
 	}
 

@@ -3,7 +3,7 @@
 		<h2>Speakers</h2>
 		#{list event.speakers(), as : "speaker"}
 			<dl>
-				<dt>${speaker.fullName}</dt>
+				<dt><a href="@{Application.member(speaker.id)}">${speaker.fullName}</a></dt>
 				<dd>${speaker.activity}</dd>
 				<dd>${speaker.company}</dd>
 				<dd><a href="${speaker.url}" target="blank">${speaker.url}</a></dd>

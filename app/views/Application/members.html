@@ -16,7 +16,7 @@
 			#{/else}
 			</div>
 			<div>
-			<h3>${member.fullName}</h3>
+			<h3><a href="@{Application.member(member.id)}">${member.fullName}</a>#{if (member.memberFct)} &nbsp; <span class="member-fonction">(${member.memberFct})</span>#{/if}</h3>
 			<span>${member.company}</span><br />
 			${member.activity}
 			</div>

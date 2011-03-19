@@ -15,7 +15,7 @@
  Event(e2):
    title: Event Two
    description: Event One default description
-   date: 2000-01-01
+   date: 3000-01-01
 
  User(u1):
    email: user1@gmail.com
@@ -43,12 +43,16 @@
    activity: Consultant & Architecte Logiciel
    company: Zenexity
    url: http://www.zenexity.com
+   jugmember: true
+   memberFct: Président
 
  Speaker(speak2):
    fullName: Blip
    activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
    company: Toto
+   jugmember: true
    url: nop
+   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut bibendum dui. Morbi aliquam faucibus turpis, ut porta arcu venenatis eget. Nam rhoncus magna nec lorem vulputate ac suscipit dolor sagittis. Sed lacinia nibh id arcu molestie eu ultricies urna lacinia. Vivamus nisi lacus, eleifend vel accumsan ac, luctus sit amet lorem. Etiam eu interdum sapien. Aenean vel dui sapien, vehicula mollis nulla. Fusce elit nisi, commodo id elementum ac, tincidunt ut velit. In aliquet eros vitae metus luctus euismod eu vitae tellus. In rhoncus hendrerit sodales. Nullam interdum diam in erat eleifend sed euismod nisi ornare. Sed porta aliquam consequat. Aliquam lacus tellus, luctus ut pharetra ac, feugiat in lorem. Aliquam ante tortor, tempus pellentesque consequat nec, dignissim eu sapien. Vestibulum magna arcu, malesuada non dictum ac, luctus in augue. Vestibulum et dignissim tellus. Pellentesque ut lorem sit amet lectus lobortis lobortis id et augue. Quisque sapien enim, porttitor vitae rhoncus vel, venenatis ac nibh. Proin sed molestie justo. Pellentesque justo dui, ullamcorper eget dignissim nec, adipiscing vel odio. Praesent pellentesque, ligula et pharetra molestie, tellus quam bibendum purus, sed imperdiet nisl lorem vel dolor. Maecenas quis metus ut mi dapibus congue. Nam imperdiet porta luctus.Sed eu ipsum sit amet massa lacinia pulvinar. Vivamus sodales feugiat mauris, bibendum varius leo ultrices id. Proin massa mi, molestie eget convallis id, condimentum ac enim. Sed quis diam nisl. Quisque vestibulum justo id odio dignissim hendrerit. Donec sed risus turpis. Nullam ultricies magna in neque vestibulum pharetra ac non neque. Nullam aliquam odio quis ante aliquet placerat. Proin varius nunc sit amet mi auctor tristique. Donec imperdiet, dui ut fermentum semper, orci neque fringilla diam, eget convallis metus lorem non nibh. Proin nec dui vel mauris semper congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam hendrerit venenatis arcu, lacinia sodales tortor mollis eget. Vivamus vitae elit dignissim purus tristique pellentesque ac at tellus. Cras consequat vestibulum leo, non elementum mauris venenatis eget. Morbi eu nibh massa, vel pellentesque ante. Nam et risus et dui imperdiet laoreet. Mauris in urna magna, non pellentesque diam. Ut ac sapien sit amet metus laoreet aliquam. Cras dui ante, iaculis eu porttitor a, egestas et quam. Quisque eu eros ac turpis egestas rhoncus. Aenean mauris urna, eleifend et condimentum eget, tincidunt in sapien. Sed blandit sodales nunc, in faucibus mauris ullamcorper vitae. Etiam malesuada arcu et ligula placerat semper. Vestibulum sit amet tellus quam, sed luctus diam. Mauris mollis, nibh a semper consectetur, orci eros consequat eros, nec faucibus risus quam id neque. Ut ut vestibulum eros. Sed iaculis aliquam risus eget ultricies. Suspendisse facilisis orci ut lorem consectetur et mollis mi vestibulum. Nunc sit amet libero eget arcu congue fringilla luctus at elit. Donec dolor turpis, dictum porttitor condimentum eu, consectetur eget augue. Vivamus venenatis tristique aliquam. Vestibulum non diam tincidunt enim vehicula suscipit pellentesque eu neque. Vivamus sit amet ullamcorper eros. Fusce hendrerit pellentesque turpis non viverra. Maecenas quis est purus. Ut vulputate, eros nec feugiat faucibus, magna quam posuere tortor, vel tempus libero enim vitae arcu. Etiam non nisl ac est congue aliquet eget sed justo. Maecenas nunc mi, porta sit amet condimentum non, euismod sit amet quam. Etiam sit amet laoreet mauris. Maecenas tellus urna, suscipit id accumsan non, porttitor non libero. Nam sit amet leo elementum elit tempor eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 
  Speaker(speak3):
    fullName: Blop
@@ -62,21 +66,3 @@
    speaker: speak1
    teaser: Introduction de la soirée
    event: e1
-
- Member(mem1):
-   fullName: Arnaud Castelltort
-   activity: Consultant & Architecte Logiciel
-   company: Zenexity
-   url: http://www.zenexity.com
-
- Member(mem2):
-   fullName: Blip
-   activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
-   company: Toto
-   url: nop
-
- Member(mem3):
-   fullName: Blop
-   activity: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis rhoncus ultricies. Maecenas sit amet sapien at orci accumsan vulputate.
-   company: Titi
-   url: nop
