@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -25,9 +26,11 @@ public class Event extends Model {
     public String location;
 
     @MaxSize(2000)
+    @Column(length=2000)
     public String description;
 
     @MaxSize(5000)
+    @Column(length=5000)
     public String report;
 
     public String registrationURL;
@@ -36,6 +39,8 @@ public class Event extends Model {
 
     public boolean open;
 
+    @MaxSize(5000)
+    @Column(length=5000)
     public String map;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
