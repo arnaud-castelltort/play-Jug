@@ -7,10 +7,10 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /event                                  Application.event
+GET     /event/{id}                             Application.event
 GET     /about                                  Application.about
-GET 	/members								Application.members
-GET		/member/{id}							Application.member
+GET     /members                                Application.members
+GET     /member/{id}                            Application.member
 GET     /attachment/{eventId}/{attachment}      Application.downloadEventAttachment
 GET     /inscription/{id}                       Inscription.show
 GET     /validcode/{code}                       Inscription.validCode
