@@ -543,3 +543,35 @@ footer .credits {
 	font-style: italic;
 }
 
+.attachments {
+	width: 100%;
+/* 	border-top: 1px solid #4a738c; */
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+.attachments a {
+	color: #4a738c;
+	text-decoration: none;
+}
+
+.attachments a:hover {
+	color: #1d262b;
+}
+
+.remove {
+	color: red !important;
+	font-weight: bold;
+	margin: 2px;
+}
+
+
+.flash-success {
+	color: green;
+	padding: 5px;
+}
+
+.flash-error {
+	color: red;
+	padding: 5px;
+}

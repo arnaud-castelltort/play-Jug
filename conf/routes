@@ -11,9 +11,11 @@ GET     /event                                  Application.event
 GET     /about                                  Application.about
 GET 	/members								Application.members
 GET		/member/{id}							Application.member
+GET     /attachment/{eventId}/{attachment}      Application.downloadEventAttachment
 GET     /inscription/{id}                       Inscription.show
 GET     /validcode/{code}                       Inscription.validCode
 GET     /captcha                                Inscription.captcha
+GET     /remove/{eventId}/{filename}            Admin.rmEventAttachment
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

@@ -35,11 +35,6 @@ public class Speaker extends Model {
 	}
 	
 	public static List<Event> getSpeakerEvents(Long speakerId) {
-		List<Event> events = new ArrayList<Event>();
- 		List<Talk> talks = Talk.find("bySpeaker", Speaker.findById(speakerId)).fetch();
- 		for (Talk talk: talks) {
- 			events.add(talk.event);
-		}
- 		return events;
+		return Talk.find("select talk.event from Talk talk where talk.speaker.id=?", speakerId).fetch();
 	}
 }

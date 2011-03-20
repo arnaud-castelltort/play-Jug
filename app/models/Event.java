@@ -1,5 +1,6 @@
 package models;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,8 +11,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import play.Play;
 import play.data.validation.MaxSize;
-import play.db.jpa.JPABase;
 import play.db.jpa.Model;
 
 @Entity
@@ -79,6 +80,14 @@ public class Event extends Model {
 			speakers.add(talk.speaker);
 		}
 		return speakers;
+	}
+	
+	public static String[] attachments(Long id) {
+		File eventAttachments = getAttachment(id, "");
+		return eventAttachments.list();
+	}
+	public static File getAttachment(Long id, String filename) {
+		return Play.getFile("public/event" + id + "/" + filename);
 	}
 
 }

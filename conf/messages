@@ -38,3 +38,10 @@ event.header.report =
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 members.title=Les membres
 member.event=Interventions :
+
+# Errors
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+upload.error=Erreur durant l'upload du fichier.
+upload.success=Le fichier %s a été correctement envoyé.
+remove.error=Erreur durant la suppression du fichier.
+remove.success=Fichier %s correctement supprimé.

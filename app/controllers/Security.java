@@ -10,4 +10,11 @@ public class Security extends Secure.Security {
 				&& password.equals(Play.configuration
 						.getProperty("secure.admin.password"));
 	}
+	
+	static boolean check(String profile) {
+		if (profile.equals("Admin")) {
+			return session.get("username").equals(Play.configuration.getProperty("secure.admin.username"));
+		}
+		return false;
+	}
 }

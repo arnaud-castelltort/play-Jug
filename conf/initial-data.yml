@@ -66,3 +66,17 @@
    speaker: speak1
    teaser: Introduction de la soirée
    event: e1
+
+ Talk(talk2):
+   title: Introduction
+   time: "19:00"
+   speaker: speak2
+   teaser: Introduction de la soirée
+   event: e0
+
+ Talk(talk3):
+   title: Introduction
+   time: "19:00"
+   speaker: speak1
+   teaser: Introduction de la soirée
+   event: e2

@@ -45,6 +45,31 @@
 		#{/if}
 		<h2>After</h2>
 		<p>A la fin de la soirée, une troisième mi-temps sera proposée dans un bar pour continuer à échanger et sympathiser </p>
+		
+		<div class="attachments">
+			#{list attachments, as : "attachment"}
+				<a href="@{Application.downloadEventAttachment(event.id, attachment)}">${attachment}</a> 
+				#{if session.get("username").equals(play.configuration['secure.admin.username'])}
+					<a href="@{Admin.rmEventAttachment(event.id, attachment)}" class="remove">x</a>
+				#{/if}	
+				<br />
+			#{/list}
+			<br />
+			#{if session.get("username").equals(play.configuration['secure.admin.username'])}
+				<div>
+		    	#{form @Admin.addEventAttachment(event.id), method:'POST', enctype:'multipart/form-data'}
+		        <input type="file" name="attachment" />
+		        <button type="submit">&{'send'}</button>
+			    #{/form}
+			    #{if flash.success}
+			    	<div class="flash-success">${flash.success}</div>
+			    #{/if}
+			    #{if flash.error}
+			    	<div class="flash-error">${flash.error}</div>
+			    #{/if}
+		    	</div>
+	    	#{/if}
+    	</div>
 	</article>
 </section>
 
