@@ -48,7 +48,9 @@ public class Inscription extends Controller {
 
         // check is the event is full
         if (event.capacity <= Participation.find("event.id = ?", id).fetch().size()) {
-            validation.addError("capacity","Désolé mais la capacité d'accueil maximale est dépassée; Veuillez réessayer le jour même de l'évènement à partir de 15h00 (publication des désistements)","capacity");
+            validation
+                    .addError("capacity", "Désolé mais la capacité d'accueil maximale est dépassée; Veuillez réessayer le jour même de l'évènement à partir de 15h00 (publication des désistements)",
+                            "capacity");
         }
 
         if (validation.hasErrors()) {
@@ -62,9 +64,9 @@ public class Inscription extends Controller {
             user.email = subscribeEmail;
             user.save();
         } else {
-            if (Participation.count("from Participation where event = ? and user = ?", event, user) != 0)
-            {
-                validation.addError("participation", "Désolé mais vous êtes déjà inscrit pour cet évènement","participation");
+            if (Participation.count("from Participation where event = ? and user = ?", event, user) != 0) {
+                validation.addError("participation", "Désolé mais vous êtes déjà inscrit pour cet évènement",
+                        "participation");
                 List<Participation> participations = Participation.find("event.id = ? ", id).fetch();
                 render("Inscription/show.html", participations, event, randomId);
             }

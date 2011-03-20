@@ -8,4 +8,3 @@ import models.Talk;
 public class AdminTalk extends CRUD {
 
 }
-
