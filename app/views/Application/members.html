@@ -18,7 +18,7 @@
 			<div>
 			<h3><a href="@{Application.member(member.id)}">${member.fullName}</a>#{if (member.memberFct)} &nbsp; <span class="member-fonction">(${member.memberFct})</span>#{/if}</h3>
 			<span>${member.company}</span><br />
-			${member.activity}
+			${member.activity.nl2br()}
 			</div>
 		</article>
 	#{/list}
