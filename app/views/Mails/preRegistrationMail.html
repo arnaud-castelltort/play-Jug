@@ -6,73 +6,123 @@
 
 </head>
 <body bgcolor="#29363e" text="#2173af">
-	<div style="width:900px; position:absolute; right:50%; margin-right:-450px;background-color:#29363e;color:#white;">
-	<div style="height: 100px;">
-		<div style="float: left;">
-			<a href="http://www.jug-montpellier.org"><img
-				src="http://www.jug-montpellier.org/public/images/logo.png"
-				alt="Montpellier JUG" border="0">
-			</a>
-		</div>
-		<div style="line-height: 60px; float: right; padding-right: 10px;">
-			<a href="http://www.jug-montpellier.org">Montpellier Jug</a>
-		</div>
-	</div>
-	<div style="background-color:#9a2101;">
-		<div style="float:left;padding:10px;">
-			<h1>${event.title}</h1>
-			<p>
-			${event.description} <a href="${host}@{Application.event(event.id)}">Plus
-				d'informations</a>
-			</p>
-		</div>
-		<div style="float: right;width:350px;padding:10px;background-color:#781a01;">
-			<h2>Speakers</h2>
-			#{list event.speakers(), as : "speaker"} ${speaker.fullName}<br />
-				${speaker.activity}<br />
-				${speaker.company}<br />
-				<a href="${speaker.url}" target="blank">${speaker.url}</a><br /> <br />
-			#{/list}
-		</div>
-		<div style="clear:both;"></div>
-	</div>
 
-		<div style="padding:10px;">
-			<h2>Valider votre préInscription</h2>
-			Merci de bien vouloir cliquer sur ce <a
-				href="${host}@{Inscription.validCode(code)}">lien</a>.
-
-			<h2>Sessions</h2>
-			#{list event.talks, as : "talk"}
-			<h3>${talk.title}</h3>
+<div style="background-color: white;">
+	    <table width="100%" border="0" cellpadding="4" cellspacing="0"
+      height="191">
+      <tbody>
+        <tr>
+          <td valign="top" width="50" height="10"> <br>
+          </td>
+          <td valign="top"><img
+              src="http://www.jug-montpellier.org/public/images/logo.png" width="108"
+              align="top" height="83"><b><big><big><font color="#4a738c">MONTPELLIER
+                    JUG</font></big></big></b><br>
+          </td>
+          <td valign="top" width="100"><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="position: relative; right: 50%; margin:
+            0pt -450px 0pt 0pt; background: none repeat scroll 0% 0%
+            rgb(169, 36, 1); -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0,
+            0.3); color: rgb(43, 10, 1);" valign="top"><br>
+            <span style="font-size: 40px; line-height: 40px; color:
+              white; font-weight: bold; text-decoration: none;
+              text-shadow: 2px 2px 0pt rgba(0, 0, 0, 0.3); padding-left:
+              20px;">${event.title}</span><br>
+            <span style="font-size: 14px; line-height: 40px; color:
+              white; font-weight: bold; text-decoration: none;
+              text-shadow: 2px 2px 0pt rgba(0, 0, 0, 0.3); padding-left:
+              20px;">${event.description}</span> </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <div style="color: black; font-family: Verdana,Arial; font-weight:
+      normal; font-size: 13px; padding-left: 40px; padding-right: 120px;
+      padding-top: 30px;"> Bonjour,<br>
+      <br>
+      Nous avons bien pris en compte votre demande de pr&eacute;-inscription.<br>
+      Pour la valider, merci de bien vouloir cliquer sur ce
+      <a href="${host}@{Inscription.validCode(code)}">lien</a>.
+      <br>
+      <br />
+      <br />
+      <h2>Rappel du programme</h2>
+		#{list event.talks(), as : "talk"}
+			<h3>${talk.time} : ${talk.title}</h3>
+			</p>présenté par <span style="color: #4A738C;font-weight: bold;">${talk.speaker.fullName}</span></p>
 			<p>${talk.teaser}</p>
-			#{/list}
-		</div>
-		
-		<div style="background-color:#8fb704;padding:10px;">
-		<h2>Partners</h2>
-		
-		<div style="float:left;background-color:white;padding:10px;">
-			<a href="http://www.zenexity.fr"><img
-					src="http://www.playapps.net/public/images/zenexity.png" />
-			</a>
-			<br /><a href="http://www.zenexity.fr"><img
-					src="http://www.playapps.net/public/images/zenexity.png" />
-			</a>
-			<br/><a href="http://www.zenexity.fr"><img
-					src="http://www.playapps.net/public/images/zenexity.png" />
-			</a>
-			
-		</div>
-		<div style="float:right;width:300px;text-align:left;">
-			<h3>Devenir sponsor?</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-				sagittis rhoncus ultricies. Maecenas sit amet sapien at orci
-				accumsan vulputate.</p>
-		</div>
-		<div style="clear:both;"></div>
-	</div>
-		
-		
-		</div>
+		#{/list}
+    </div>
+    <div style="color: black; font-family: Verdana,Arial; font-weight:
+      normal; font-size: 13px; padding-left: 40px; padding-right: 120px;
+      padding-top: 30px;"> Cette session est aussi l'occasion de se
+      rencontrer et de connaitre vos attentes vis &agrave; vis du JUG. Venez
+      nombreux et faites passer l'information. La session se cloturera
+      par un drink autour de discussions plus informelles. </div>
+    <br>
+    <table width="100%" border="0" cellpadding="4" cellspacing="0"
+      height="40">
+      <tbody>
+        <tr>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> Site Web</td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> Twitter</td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> Google-groups </td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> Contact </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> <a style="color: white;
+              text-decoration: underline;"
+              href="http://www.jug-montpellier.org">http://www.jug-montpellier.org</a>
+          </td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> @montpellierjug </td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> <a style="color: white;
+              text-decoration: underline;"
+              href="http://groups.google.com/group/jug-montpellier">http://groups.google.com/group/jug-montpellier</a>
+          </td>
+          <td colspan="3" style="font-family: Verdana,Arial; font-size:
+            11px; position: relative; right: 50%; margin: 0pt -450px 0pt
+            0pt; background: none repeat scroll 0% 0% rgb(169, 36, 1);
+            -moz-box-shadow: 5px 5px 0pt rgba(0, 0, 0, 0.3); color:
+            white;" valign="top"> <a style="color: white;
+              text-decoration: underline;"
+              href="mailto:info@jug-montpellier.org">info@jug-montpellier.org</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>
+
+
 	</body></html>
