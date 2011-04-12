@@ -9,8 +9,9 @@
  Event(e1):
    title: Event One
    description: Event One default description
-   date: 2011-03-01
+   date: 2011-03-13
    map: <iframe width="562" height="314" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=epitech+montpellier&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,93.076172&amp;ie=UTF8&amp;hq=epitech&amp;hnear=Montpellier,+H%C3%A9rault,+Languedoc-Roussillon,+France&amp;layer=c&amp;cbll=43.607942,3.873695&amp;panoid=rJy6Bagc9LzKrYWFRM1RLQ&amp;cbp=13,165.29,,0,23.03&amp;cid=8391966111556646024&amp;ll=43.599989,3.876886&amp;spn=0.019517,0.048237&amp;z=14&amp;iwloc=A&amp;output=svembed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=epitech+montpellier&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=36.231745,93.076172&amp;ie=UTF8&amp;hq=epitech&amp;hnear=Montpellier,+H%C3%A9rault,+Languedoc-Roussillon,+France&amp;layer=c&amp;cbll=43.607942,3.873695&amp;panoid=rJy6Bagc9LzKrYWFRM1RLQ&amp;cbp=13,165.29,,0,23.03&amp;cid=8391966111556646024&amp;ll=43.599989,3.876886&amp;spn=0.019517,0.048237&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Agrandir le plan</a></small>
+   open: true
 
  Event(e2):
    title: Event Two
@@ -18,7 +19,7 @@
    date: 3000-01-01
 
  User(u1):
-   email: user1@gmail.com
+   email: arnaud.castelltort@gmail.com
 
  User(u2):
    email: user2@gmail.com
