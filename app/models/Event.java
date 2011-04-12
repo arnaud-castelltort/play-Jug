@@ -96,8 +96,16 @@ public class Event extends Model {
         return Play.getFile("public/event" + id + "/" + filename);
     }
 
+    public Long particitationValidated(){
+        Long count = new Long(0L);
+        count = count.valueOf(Participation.find("event.id = ? and status = ?", id, Participation.ParticipationStatus.Confirmed).fetch().size());
+        return count;
+    }
+
+
     @Override
     public String toString() {
         return title;
     }
+
 }

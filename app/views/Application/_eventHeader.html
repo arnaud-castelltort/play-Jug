@@ -21,7 +21,7 @@
 		#{/if}
 		#{else}
 			<ul id="details">
-				<li class="date">${event.date.format('dd MMMM yyyy', 'fr')} (${event.capacity} places)</li>
+				<li class="date">${event.date.format('dd MMMM yyyy', 'fr')} (${event.capacity-event.particitationValidated()} places restantes)</li>
 				<li class="place">${event.location != null && !event.location.equals('') ? event.location : 'Lieu à définir' }</li>
 				#{if event.registrationCloded()}
 					<li class="register closed"><li>
